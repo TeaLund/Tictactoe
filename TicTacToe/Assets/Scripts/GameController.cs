@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Player
@@ -26,6 +27,7 @@ public class GameController : MonoBehaviour {
     public GameObject restartButton;
     public GameObject choosePlayerX;
     public GameObject choosePlayerO;
+    public GameObject menuButton;
     public Text gameOverText;
     
     public Player playerX;
@@ -41,6 +43,7 @@ public class GameController : MonoBehaviour {
         SetGameControllerReferenceOnButtons();        
         gameOverPanel.SetActive(false);
         restartButton.SetActive(false);
+        menuButton.SetActive(false);
         moveCount = 0;        
     }
 
@@ -191,6 +194,7 @@ public class GameController : MonoBehaviour {
             SetGameOverText(winningPlayer + " Wins!");
         }
         restartButton.SetActive(true);
+        menuButton.SetActive(true);
     }
 
     public void RestartGame()
@@ -198,6 +202,7 @@ public class GameController : MonoBehaviour {
         moveCount = 0;
         gameOverPanel.SetActive(false);
         restartButton.SetActive(false);
+        menuButton.SetActive(false);
         startInfo.SetActive(true);
         SetPlayerButtons(true);
         choosePlayerX.SetActive(true);
@@ -208,6 +213,11 @@ public class GameController : MonoBehaviour {
         {            
             buttonList[i].text = "";
         }
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
 
