@@ -99,8 +99,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 50f7d8a6d37bf3b43be5e910bcd29b55, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -120,7 +120,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 114947552390657918}
   buttonText: {fileID: 114214550843829378}
-  playerSide: X
 --- !u!114 &114947552390657918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,10 +139,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0.8, b: 0.8, a: 1}
-    m_HighlightedColor: {r: 0.5019608, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.2, g: 0.4, b: 0.4, a: 1}
-    m_DisabledColor: {r: 0.21568628, g: 0.25882354, b: 0.3019608, a: 1}
+    m_NormalColor: {r: 0.6911765, g: 0.5649982, b: 0.508218, a: 1}
+    m_HighlightedColor: {r: 0.88235295, g: 0.74038273, b: 0.6812284, a: 1}
+    m_PressedColor: {r: 0.625, g: 0.37140015, b: 0.2711397, a: 1}
+    m_DisabledColor: {r: 0.33823532, g: 0.28205785, b: 0.25865054, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -155,7 +154,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 114609145194285094}
   m_OnClick:
     m_PersistentCalls:
