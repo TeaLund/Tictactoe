@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour {
 
     public Button startGameButton;
-    public Button optionButton;
+    public Button optionsButton;
     public Button quitGameButton;
     public Button cancelButton;
     public Button confirmQuitButton;
@@ -20,8 +20,31 @@ public class MenuController : MonoBehaviour {
 
     private void Awake()
     {
+        //Disables the option and quit panels.
         quitPanel.SetActive(quitPanelToggle);
         optionsPanel.SetActive(optionsPanelToggle);
+    }
+
+    private void Start()
+    {
+        //Enables the screen to rotate to the values set to true.
+        //Auto-rotates the screen towards the enabled orientations.
+        Screen.autorotateToLandscapeLeft = true;
+        Screen.autorotateToLandscapeRight = true;
+        Screen.autorotateToLandscapeRight = true;
+        Screen.orientation = ScreenOrientation.AutoRotation;
+    }
+
+    private void Update()
+    {
+        if (optionsPanelToggle || quitPanelToggle)
+        {
+            DisableMenuButtons();
+        }
+        else
+        {
+            EnableMenuButtons();
+        }
     }
 
     public void StartGame()
@@ -29,14 +52,14 @@ public class MenuController : MonoBehaviour {
         SceneManager.LoadScene(1);
     }
 
-    public void toggleOptionsPanel ()
+    public void ToggleOptionsPanel ()
     {
         optionsPanelToggle = optionsPanelToggle ? false : true;
 
         optionsPanel.SetActive(optionsPanelToggle);
     }
 
-    public void toggleQuitPanel ()
+    public void ToggleQuitPanel ()
     {
         quitPanelToggle = quitPanelToggle ? false : true;
 
@@ -46,5 +69,19 @@ public class MenuController : MonoBehaviour {
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private void DisableMenuButtons ()
+    {
+        quitGameButton.interactable = false;
+        optionsButton.interactable = false;
+        startGameButton.interactable = false;
+    }
+
+    private void EnableMenuButtons ()
+    {
+        quitGameButton.interactable = true;
+        optionsButton.interactable = true;
+        startGameButton.interactable = true;
     }
 }
