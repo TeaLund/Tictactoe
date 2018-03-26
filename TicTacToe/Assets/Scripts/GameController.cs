@@ -124,6 +124,7 @@ public class GameController : MonoBehaviour {
         SetBoardInteractable(true);
         SetPlayerButtons(false);       
         startInfo.SetActive(false);
+        menuButton.SetActive(false);
         choosePlayerX.SetActive(false);
         choosePlayerO.SetActive(false);
     }
@@ -192,6 +193,7 @@ public class GameController : MonoBehaviour {
         else
         {
             SetGameOverText(winningPlayer + " Wins!");
+            SetPlayerColorsInactive();
         }
         restartButton.SetActive(true);
         menuButton.SetActive(true);
