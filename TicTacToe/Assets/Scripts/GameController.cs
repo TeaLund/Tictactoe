@@ -61,20 +61,6 @@ public class GameController : MonoBehaviour {
         mainMenuPanel.SetActive(mainMenuToggle);
     }
 
-    private void Update()
-    {
-        if (mainMenuToggle)
-        {
-            SetBoardInteractable(false);
-            SetPlayerButtons(false);
-        }
-        else
-        {
-            SetBoardInteractable(true);
-            SetPlayerButtons(true);
-        }
-    }
-
     private void SetGameControllerReferenceOnButtons()
     {
         for (int i = 0; i < buttonList.Length; i++)
@@ -116,6 +102,17 @@ public class GameController : MonoBehaviour {
     {
         mainMenuToggle = mainMenuToggle ? false : true;
         mainMenuPanel.SetActive(mainMenuToggle);
+
+        if (mainMenuToggle)
+        {
+            SetBoardInteractable(false);
+            SetPlayerButtons(false);
+        }
+        else
+        {
+            SetBoardInteractable(true);
+            SetPlayerButtons(true);
+        }
     }
 
     private void ChangeSides()
@@ -242,6 +239,7 @@ public class GameController : MonoBehaviour {
             SetGameOverText(winningPlayer + " Wins!");
             SetPlayerColors(playerO, playerX);
         }
+
         restartButton.SetActive(true);
         menuButton.SetActive(true);
         ToggleWinPanel();
