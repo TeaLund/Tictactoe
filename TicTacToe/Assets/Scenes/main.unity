@@ -1321,16 +1321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f43fd09098cad741b81c68ed8282d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  buttonList: []
   gameOverPanel: {fileID: 1754460596}
   startInfo: {fileID: 236968292}
   restartButton: {fileID: 1649635756}
@@ -2705,6 +2696,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 044393894d75f514791b503e8149ac47, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1783667680 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114959655340657526, guid: 044393894d75f514791b503e8149ac47,
+    type: 2}
+  m_PrefabInternal: {fileID: 1783667679}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1838249176
 GameObject:
   m_ObjectHideFlags: 0
@@ -2992,6 +2989,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114775693151732182, guid: 044393894d75f514791b503e8149ac47,
+        type: 2}
+      propertyPath: buttonText
+      value: 
+      objectReference: {fileID: 1783667680}
     - target: {fileID: 1948176768619634, guid: 044393894d75f514791b503e8149ac47, type: 2}
       propertyPath: m_Name
       value: Grid Space (8)
