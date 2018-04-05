@@ -14,6 +14,8 @@ public class MenuController : MonoBehaviour {
     public GameObject quitPanel;
     public Button backButton;
     public GameObject optionsPanel;
+    //public GameObject backgroundLandscape;
+    //public GameObject backgroundPortrait;
 
     private bool quitPanelToggle = false;
     private bool optionsPanelToggle = false;
@@ -31,7 +33,7 @@ public class MenuController : MonoBehaviour {
         //Auto-rotates the screen towards the enabled orientations.
         Screen.autorotateToLandscapeLeft = true;
         Screen.autorotateToLandscapeRight = true;
-        Screen.autorotateToLandscapeRight = true;
+        Screen.autorotateToPortrait = true;
         Screen.orientation = ScreenOrientation.AutoRotation;
     }
 
@@ -44,6 +46,15 @@ public class MenuController : MonoBehaviour {
         else
         {
             EnableMenuButtons();
+        }
+
+        if (Screen.orientation == ScreenOrientation.Portrait)
+        {
+            //SetOrientationPortrait();
+        }
+        else
+        {
+            //SetOrientationLandscape();
         }
     }
 
@@ -84,4 +95,16 @@ public class MenuController : MonoBehaviour {
         optionsButton.interactable = true;
         startGameButton.interactable = true;
     }
+
+    /*private void SetOrientationPortrait()
+    {
+        backgroundLandscape.SetActive(false);
+        backgroundPortrait.SetActive(true);
+    }
+
+    private void SetOrientationLandscape ()
+    {
+        backgroundLandscape.SetActive(true);
+        backgroundPortrait.SetActive(false);
+    }*/
 }
