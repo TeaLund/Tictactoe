@@ -35,6 +35,7 @@ public class GameController : MonoBehaviour {
 
     private bool winPanelToggle = false;
     private bool mainMenuToggle = false;
+    private bool isPlaying = false;
     
     public Player playerX;
     public Player playerO;
@@ -110,8 +111,11 @@ public class GameController : MonoBehaviour {
         }
         else
         {
-            SetBoardInteractable(true);
-            SetPlayerButtons(true);
+            if (isPlaying)
+            {
+                SetBoardInteractable(true);
+                SetPlayerButtons(true);
+            }
         }
     }
 
@@ -161,6 +165,7 @@ public class GameController : MonoBehaviour {
     void StartGame()
     {
         SetBoardInteractable(true);
+        isPlaying = true;
         SetPlayerButtons(false);       
         startInfo.SetActive(false);
         menuButton.SetActive(true);
@@ -222,7 +227,8 @@ public class GameController : MonoBehaviour {
 
     void GameOver(string winningPlayer)
     {
-        SetBoardInteractable(false); 
+        SetBoardInteractable(false);
+        isPlaying = false;
         
         if (winningPlayer == "draw")
         {
