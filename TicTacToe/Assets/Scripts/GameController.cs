@@ -10,6 +10,7 @@ public class Player
     public Image panel;
     public Text text;
     public Button button;
+    public Image icon;
 }
 
 [System.Serializable]
@@ -43,7 +44,7 @@ public class GameController : MonoBehaviour {
         SetGameControllerReferenceOnButtons();        
         gameOverPanel.SetActive(false);
         restartButton.SetActive(false);
-        menuButton.SetActive(false);
+        menuButton.SetActive(true);
         moveCount = 0;        
     }
 
@@ -214,6 +215,9 @@ public class GameController : MonoBehaviour {
         for (int i = 0; i < buttonList.Length; i++)
         {            
             buttonList[i].text = "";
+            buttonList[i].GetComponentInParent<GridSpace>().O.SetActive(false);
+            buttonList[i].GetComponentInParent<GridSpace>().X.SetActive(false);
+
         }
     }
 
